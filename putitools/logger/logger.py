@@ -1,16 +1,15 @@
-import yaml
 import logging
+from pathlib import Path
 
 from rich.logging import RichHandler
 
+LOG_PATH = Path("/tmp/my_logger.log")
 logger = logging.getLogger(__name__)
-
-with open("log_config.yaml", "r") as stream:
-    log_info = yaml.safe_load(stream)
 
 # Split between shell and file
 shell_handler = RichHandler()
-file_handler = logging.FileHandler(log_info["log_filepath"])
+file_handler = logging.FileHandler(LOG_PATH)
+
 # Set different levels for the handlers
 logger.setLevel(logging.DEBUG)
 shell_handler.setLevel(logging.WARN)
