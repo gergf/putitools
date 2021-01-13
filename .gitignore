@@ -176,3 +176,6 @@ dmypy.json
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+
+# pre-commit stuff
+.pre-commit-config.yaml
