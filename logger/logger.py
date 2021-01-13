@@ -10,8 +10,7 @@ with open("log_config.yaml", "r") as stream:
 
 # Split between shell and file
 shell_handler = RichHandler()
-file_handler = logging.FileHandler(log_info["log_filepath"])  # Link this to a config file
-
+file_handler = logging.FileHandler(log_info["log_filepath"])
 # Set different levels for the handlers
 logger.setLevel(logging.DEBUG)
 shell_handler.setLevel(logging.WARN)
